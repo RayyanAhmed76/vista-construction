@@ -1,7 +1,9 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import project1 from '@/assets/project-1.jpg';
 import project2 from '@/assets/project-2.jpg';
 import project3 from '@/assets/project-3.jpg';
@@ -32,6 +34,7 @@ const projects = [
 
 export const Projects = () => {
   const ref = useRef(null);
+  const navigate = useNavigate();
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
@@ -43,8 +46,9 @@ export const Projects = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Featured Projects
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-foreground">Featured </span>
+            <span className="text-[#003366]">Projects</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Delivering iconic commercial structures for industry leaders worldwide
@@ -94,7 +98,7 @@ export const Projects = () => {
                     {project.title}
                   </motion.h3>
                   <p className="text-muted-foreground mb-4">{project.description}</p>
-                  <div className="flex items-center justify-between pt-4 border-t border-border">
+                  <div className="flex items-center justify-between pt-4 border-t border-border mb-4">
                     <span className="text-sm text-muted-foreground">{project.stats.label}</span>
                     <motion.span 
                       className="text-lg font-bold text-accent"
@@ -103,6 +107,12 @@ export const Projects = () => {
                       {project.stats.value}
                     </motion.span>
                   </div>
+                  <Button 
+                    onClick={() => navigate(`/project/${index}`)}
+                    className="w-full"
+                  >
+                    View Details
+                  </Button>
                 </div>
               </Card>
             </motion.div>
