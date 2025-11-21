@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
-import logo from "../assets/logo.png";
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import logo from "../assets/Logo.png";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,14 +12,14 @@ export const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
       setIsMobileMenuOpen(false);
     }
   };
@@ -37,37 +37,37 @@ export const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-bold text-foreground"
           >
-            <img className='w-10 h-5 sm:w-32 sm:h-10 ' src={logo}></img>
+            <img className="w-10 h-5 sm:w-32 sm:h-10 " src={logo}></img>
           </motion.div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             <button
-              onClick={() => scrollToSection('home')}
+              onClick={() => scrollToSection("home")}
               className="text-foreground hover:text-accent transition-colors"
             >
               Home
             </button>
             <button
-              onClick={() => scrollToSection('services')}
+              onClick={() => scrollToSection("services")}
               className="text-foreground hover:text-accent transition-colors"
             >
               Services
             </button>
             <button
-              onClick={() => scrollToSection('projects')}
+              onClick={() => scrollToSection("projects")}
               className="text-foreground hover:text-accent transition-colors"
             >
               Projects
             </button>
             <button
-              onClick={() => scrollToSection('about')}
+              onClick={() => scrollToSection("about")}
               className="text-foreground hover:text-accent transition-colors"
             >
               About
             </button>
             <Button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection("contact")}
               className="bg-accent hover:bg-accent/90 text-accent-foreground"
             >
               Get Quote
@@ -91,31 +91,31 @@ export const Header = () => {
             className="md:hidden mt-4 pb-4 flex flex-col gap-4"
           >
             <button
-              onClick={() => scrollToSection('home')}
+              onClick={() => scrollToSection("home")}
               className="text-foreground hover:text-accent transition-colors text-left"
             >
               Home
             </button>
             <button
-              onClick={() => scrollToSection('services')}
+              onClick={() => scrollToSection("services")}
               className="text-foreground hover:text-accent transition-colors text-left"
             >
               Services
             </button>
             <button
-              onClick={() => scrollToSection('projects')}
+              onClick={() => scrollToSection("projects")}
               className="text-foreground hover:text-accent transition-colors text-left"
             >
               Projects
             </button>
             <button
-              onClick={() => scrollToSection('about')}
+              onClick={() => scrollToSection("about")}
               className="text-foreground hover:text-accent transition-colors text-left"
             >
               About
             </button>
             <Button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection("contact")}
               className="bg-accent hover:bg-accent/90 text-accent-foreground w-full"
             >
               Get Quote
