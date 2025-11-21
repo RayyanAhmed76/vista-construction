@@ -59,12 +59,23 @@ export const About = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isStatsInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              className="text-center cursor-pointer"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-accent/10 rounded-full mb-4">
+              <motion.div 
+                className="inline-flex items-center justify-center w-16 h-16 bg-accent/10 rounded-full mb-4"
+                whileHover={{ backgroundColor: "hsl(22 85% 55% / 0.2)" }}
+              >
                 <stat.icon className="w-8 h-8 text-accent" />
-              </div>
-              <div className="text-4xl font-bold text-foreground mb-2">{stat.value}</div>
+              </motion.div>
+              <motion.div 
+                className="text-4xl font-bold text-foreground mb-2"
+                initial={{ opacity: 0 }}
+                animate={isStatsInView ? { opacity: 1 } : {}}
+                transition={{ duration: 0.8, delay: index * 0.1 + 0.3 }}
+              >
+                {stat.value}
+              </motion.div>
               <div className="text-muted-foreground">{stat.label}</div>
             </motion.div>
           ))}
@@ -78,9 +89,15 @@ export const About = () => {
               initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="bg-card p-8 rounded-lg border border-border hover:border-accent transition-colors"
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="bg-card p-8 rounded-lg border border-border hover:border-accent transition-all duration-300 hover:shadow-2xl cursor-pointer"
             >
-              <h3 className="text-2xl font-bold text-foreground mb-3">{feature.title}</h3>
+              <motion.h3 
+                className="text-2xl font-bold text-foreground mb-3"
+                whileHover={{ color: "hsl(22 85% 55%)" }}
+              >
+                {feature.title}
+              </motion.h3>
               <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}

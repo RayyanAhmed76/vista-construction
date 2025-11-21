@@ -26,6 +26,9 @@ export const Hero = () => {
       <motion.div
         style={{ y }}
         className="absolute inset-0 z-0"
+        initial={{ scale: 1.1 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
       >
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -58,7 +61,15 @@ export const Hero = () => {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight"
             >
-              Constructing Tomorrow's Landmarks
+              Constructing Tomorrow's{' '}
+              <motion.span 
+                className="text-accent"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+              >
+                Landmarks
+              </motion.span>
             </motion.h1>
 
             <motion.p
@@ -77,21 +88,25 @@ export const Hero = () => {
               transition={{ delay: 0.8, duration: 0.8 }}
               className="flex flex-wrap gap-4"
             >
-              <Button
-                size="lg"
-                onClick={scrollToContact}
-                className="bg-accent hover:bg-accent/90 text-accent-foreground group"
-              >
-                Start Your Project
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-              >
-                View Portfolio
-              </Button>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button
+                  size="lg"
+                  onClick={scrollToContact}
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground group shadow-lg hover:shadow-xl transition-all"
+                >
+                  Start Your Project
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                >
+                  View Portfolio
+                </Button>
+              </motion.div>
             </motion.div>
           </div>
         </div>

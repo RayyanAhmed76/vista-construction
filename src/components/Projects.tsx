@@ -58,29 +58,50 @@ export const Projects = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: index * 0.15 }}
+              whileHover={{ y: -15 }}
             >
-              <Card className="overflow-hidden group cursor-pointer border-border hover:shadow-2xl transition-all duration-500">
+              <Card className="overflow-hidden group cursor-pointer border-border hover:shadow-2xl transition-all duration-500 hover:border-accent">
                 <div className="relative h-64 overflow-hidden">
-                  <img
+                  <motion.img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover"
+                    whileHover={{ scale: 1.15 }}
+                    transition={{ duration: 0.7 }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                  />
+                  <motion.div 
+                    className="absolute bottom-4 left-4 right-4"
+                    initial={{ y: 20, opacity: 0 }}
+                    whileHover={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                  >
                     <Badge className="bg-accent text-accent-foreground mb-2">
                       {project.category}
                     </Badge>
-                  </div>
+                  </motion.div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-accent transition-colors">
+                  <motion.h3 
+                    className="text-xl font-bold text-foreground mb-2 group-hover:text-accent transition-colors"
+                    whileHover={{ x: 5 }}
+                  >
                     {project.title}
-                  </h3>
+                  </motion.h3>
                   <p className="text-muted-foreground mb-4">{project.description}</p>
                   <div className="flex items-center justify-between pt-4 border-t border-border">
                     <span className="text-sm text-muted-foreground">{project.stats.label}</span>
-                    <span className="text-lg font-bold text-accent">{project.stats.value}</span>
+                    <motion.span 
+                      className="text-lg font-bold text-accent"
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      {project.stats.value}
+                    </motion.span>
                   </div>
                 </div>
               </Card>
