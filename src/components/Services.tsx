@@ -31,7 +31,7 @@ export const Services = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" ref={ref} className="py-24 bg-[hsl(210,100%,20%)]">
+    <section id="services" ref={ref} className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -39,10 +39,11 @@ export const Services = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Our Services
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-foreground">Our </span>
+            <span className="text-[#003366]">Services</span>
           </h2>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Comprehensive construction solutions tailored for enterprise-scale commercial projects
           </p>
         </motion.div>
@@ -58,13 +59,13 @@ export const Services = () => {
             >
               <Card className="p-6 h-full hover:shadow-2xl transition-all duration-500 bg-card border-border group hover:border-accent hover:scale-105">
                 <motion.div 
-                  className="mb-4 inline-block p-3 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors"
+                  className="mb-4 inline-block p-3 bg-[#003366]/10 rounded-lg group-hover:bg-[#003366]/20 transition-colors"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <service.icon className="w-8 h-8 text-accent" />
+                  <service.icon className="w-8 h-8 text-[#003366]" />
                 </motion.div>
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors">{service.title}</h3>
+                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-[#003366] transition-colors">{service.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{service.description}</p>
               </Card>
             </motion.div>
