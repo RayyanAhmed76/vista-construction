@@ -57,6 +57,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        construction: {
+          orange: "hsl(var(--construction-orange))",
+          steel: "hsl(var(--construction-steel))",
+          concrete: "hsl(var(--construction-concrete))",
+          dark: "hsl(var(--construction-dark))",
+          blue: "hsl(var(--construction-blue))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

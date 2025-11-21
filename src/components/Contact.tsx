@@ -40,34 +40,66 @@ export const Contact = () => {
             <h3 className="text-2xl font-bold text-foreground mb-6">Contact Information</h3>
             
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-accent/10 rounded-lg">
+              <motion.div 
+                className="flex items-start gap-4"
+                whileHover={{ x: 10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <motion.div 
+                  className="p-3 bg-accent/10 rounded-lg"
+                  whileHover={{ rotate: 360, backgroundColor: "hsl(22 85% 55% / 0.2)" }}
+                  transition={{ duration: 0.6 }}
+                >
                   <Mail className="w-6 h-6 text-accent" />
-                </div>
+                </motion.div>
                 <div>
                   <div className="font-semibold text-foreground mb-1">Email</div>
-                  <a href="mailto:info@apexbuild.com" className="text-muted-foreground hover:text-accent transition-colors">
+                  <motion.a 
+                    href="mailto:info@apexbuild.com" 
+                    className="text-muted-foreground hover:text-accent transition-colors"
+                    whileHover={{ x: 5 }}
+                  >
                     info@apexbuild.com
-                  </a>
+                  </motion.a>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-accent/10 rounded-lg">
+              <motion.div 
+                className="flex items-start gap-4"
+                whileHover={{ x: 10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <motion.div 
+                  className="p-3 bg-accent/10 rounded-lg"
+                  whileHover={{ rotate: 360, backgroundColor: "hsl(22 85% 55% / 0.2)" }}
+                  transition={{ duration: 0.6 }}
+                >
                   <Phone className="w-6 h-6 text-accent" />
-                </div>
+                </motion.div>
                 <div>
                   <div className="font-semibold text-foreground mb-1">Phone</div>
-                  <a href="tel:+1234567890" className="text-muted-foreground hover:text-accent transition-colors">
+                  <motion.a 
+                    href="tel:+1234567890" 
+                    className="text-muted-foreground hover:text-accent transition-colors"
+                    whileHover={{ x: 5 }}
+                  >
                     +1 (234) 567-890
-                  </a>
+                  </motion.a>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-accent/10 rounded-lg">
+              <motion.div 
+                className="flex items-start gap-4"
+                whileHover={{ x: 10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <motion.div 
+                  className="p-3 bg-accent/10 rounded-lg"
+                  whileHover={{ rotate: 360, backgroundColor: "hsl(22 85% 55% / 0.2)" }}
+                  transition={{ duration: 0.6 }}
+                >
                   <MapPin className="w-6 h-6 text-accent" />
-                </div>
+                </motion.div>
                 <div>
                   <div className="font-semibold text-foreground mb-1">Office</div>
                   <p className="text-muted-foreground">
@@ -75,17 +107,21 @@ export const Contact = () => {
                     Business District, NY 10001
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
 
-            <div className="mt-8 p-6 bg-accent/5 rounded-lg border border-accent/20">
+            <motion.div 
+              className="mt-8 p-6 bg-accent/5 rounded-lg border border-accent/20"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
               <h4 className="font-bold text-foreground mb-2">Business Hours</h4>
               <p className="text-muted-foreground">
                 Monday - Friday: 8:00 AM - 6:00 PM<br />
                 Saturday: 9:00 AM - 2:00 PM<br />
                 Sunday: Closed
               </p>
-            </div>
+            </motion.div>
           </motion.div>
 
           <motion.div
@@ -94,18 +130,26 @@ export const Contact = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: 0.5 }}
+              >
                 <label className="block text-sm font-medium text-foreground mb-2">
                   Name *
                 </label>
                 <Input
                   required
                   placeholder="Your name"
-                  className="bg-background border-border focus:border-accent"
+                  className="bg-background border-border focus:border-accent transition-all"
                 />
-              </div>
+              </motion.div>
 
-              <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: 0.6 }}
+              >
                 <label className="block text-sm font-medium text-foreground mb-2">
                   Email *
                 </label>
@@ -113,21 +157,29 @@ export const Contact = () => {
                   required
                   type="email"
                   placeholder="your.email@company.com"
-                  className="bg-background border-border focus:border-accent"
+                  className="bg-background border-border focus:border-accent transition-all"
                 />
-              </div>
+              </motion.div>
 
-              <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: 0.7 }}
+              >
                 <label className="block text-sm font-medium text-foreground mb-2">
                   Company
                 </label>
                 <Input
                   placeholder="Your company name"
-                  className="bg-background border-border focus:border-accent"
+                  className="bg-background border-border focus:border-accent transition-all"
                 />
-              </div>
+              </motion.div>
 
-              <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: 0.8 }}
+              >
                 <label className="block text-sm font-medium text-foreground mb-2">
                   Message *
                 </label>
@@ -135,17 +187,25 @@ export const Contact = () => {
                   required
                   placeholder="Tell us about your project..."
                   rows={5}
-                  className="bg-background border-border focus:border-accent resize-none"
+                  className="bg-background border-border focus:border-accent resize-none transition-all"
                 />
-              </div>
+              </motion.div>
 
-              <Button
-                type="submit"
-                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
-                size="lg"
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: 0.9 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                Send Message
-              </Button>
+                <Button
+                  type="submit"
+                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-xl transition-all"
+                  size="lg"
+                >
+                  Send Message
+                </Button>
+              </motion.div>
             </form>
           </motion.div>
         </div>
