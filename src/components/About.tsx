@@ -59,15 +59,11 @@ export const About = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isStatsInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              className="text-center cursor-pointer"
+              className="text-center"
             >
-              <motion.div 
-                className="inline-flex items-center justify-center w-16 h-16 bg-accent/10 rounded-full mb-4"
-                whileHover={{ backgroundColor: "hsl(22 85% 55% / 0.2)" }}
-              >
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-accent/10 rounded-full mb-4">
                 <stat.icon className="w-8 h-8 text-accent" />
-              </motion.div>
+              </div>
               <motion.div 
                 className="text-4xl font-bold text-foreground mb-2"
                 initial={{ opacity: 0 }}

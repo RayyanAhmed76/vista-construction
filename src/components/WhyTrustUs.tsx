@@ -2,10 +2,10 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
 const stats = [
-  { value: '500+', label: 'Projects Delivered', bgColor: 'bg-accent' },
-  { value: '50+', label: 'Countries Served', bgColor: 'bg-white' },
-  { value: '5B+', label: 'Sq Ft Built', bgColor: 'bg-white' },
-  { value: '98%', label: 'Client Satisfaction', bgColor: 'bg-accent' },
+  { value: '500+', label: 'Projects Delivered' },
+  { value: '50+', label: 'Countries Served' },
+  { value: '5B+', label: 'Sq Ft Built' },
+  { value: '98%', label: 'Client Satisfaction' },
 ];
 
 const features = [
@@ -73,22 +73,17 @@ export const WhyTrustUs = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className={`${stat.bgColor} rounded-lg p-8 text-center shadow-xl`}
+                className="bg-[#003366] border-2 border-white/20 rounded-lg p-8 text-center"
               >
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={isInView ? { scale: 1 } : {}}
                   transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  className={`text-4xl md:text-5xl font-bold mb-2 ${
-                    stat.bgColor === 'bg-accent' ? 'text-white' : 'text-[#003366]'
-                  }`}
+                  className="text-4xl md:text-5xl font-bold mb-2 text-white"
                 >
                   {stat.value}
                 </motion.div>
-                <p className={`text-sm font-medium ${
-                  stat.bgColor === 'bg-accent' ? 'text-white/90' : 'text-[#003366]/80'
-                }`}>
+                <p className="text-sm font-medium text-white/80">
                   {stat.label}
                 </p>
               </motion.div>

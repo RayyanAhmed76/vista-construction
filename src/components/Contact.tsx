@@ -15,7 +15,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" ref={ref} className="py-24 bg-background">
+    <section id="contact" ref={ref} className="py-24 bg-[#003366]">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -23,10 +23,10 @@ export const Contact = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Let's Build Together
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Ready to start your next commercial construction project? Get in touch with our team.
           </p>
         </motion.div>
@@ -37,7 +37,7 @@ export const Contact = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold text-foreground mb-6">Contact Information</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
             
             <div className="space-y-6">
               <motion.div 
@@ -46,17 +46,17 @@ export const Contact = () => {
                 transition={{ duration: 0.3 }}
               >
                 <motion.div 
-                  className="p-3 bg-accent/10 rounded-lg"
-                  whileHover={{ rotate: 360, backgroundColor: "hsl(22 85% 55% / 0.2)" }}
+                  className="p-3 bg-white/10 rounded-lg"
+                  whileHover={{ rotate: 360, backgroundColor: "hsl(0 0% 100% / 0.2)" }}
                   transition={{ duration: 0.6 }}
                 >
-                  <Mail className="w-6 h-6 text-accent" />
+                  <Mail className="w-6 h-6 text-white" />
                 </motion.div>
                 <div>
-                  <div className="font-semibold text-foreground mb-1">Email</div>
+                  <div className="font-semibold text-white mb-1">Email</div>
                   <motion.a 
                     href="mailto:info@apexbuild.com" 
-                    className="text-muted-foreground hover:text-accent transition-colors"
+                    className="text-white/80 hover:text-accent transition-colors"
                     whileHover={{ x: 5 }}
                   >
                     info@apexbuild.com
@@ -70,17 +70,17 @@ export const Contact = () => {
                 transition={{ duration: 0.3 }}
               >
                 <motion.div 
-                  className="p-3 bg-accent/10 rounded-lg"
-                  whileHover={{ rotate: 360, backgroundColor: "hsl(22 85% 55% / 0.2)" }}
+                  className="p-3 bg-white/10 rounded-lg"
+                  whileHover={{ rotate: 360, backgroundColor: "hsl(0 0% 100% / 0.2)" }}
                   transition={{ duration: 0.6 }}
                 >
-                  <Phone className="w-6 h-6 text-accent" />
+                  <Phone className="w-6 h-6 text-white" />
                 </motion.div>
                 <div>
-                  <div className="font-semibold text-foreground mb-1">Phone</div>
+                  <div className="font-semibold text-white mb-1">Phone</div>
                   <motion.a 
                     href="tel:+1234567890" 
-                    className="text-muted-foreground hover:text-accent transition-colors"
+                    className="text-white/80 hover:text-accent transition-colors"
                     whileHover={{ x: 5 }}
                   >
                     +1 (234) 567-890
@@ -94,15 +94,15 @@ export const Contact = () => {
                 transition={{ duration: 0.3 }}
               >
                 <motion.div 
-                  className="p-3 bg-accent/10 rounded-lg"
-                  whileHover={{ rotate: 360, backgroundColor: "hsl(22 85% 55% / 0.2)" }}
+                  className="p-3 bg-white/10 rounded-lg"
+                  whileHover={{ rotate: 360, backgroundColor: "hsl(0 0% 100% / 0.2)" }}
                   transition={{ duration: 0.6 }}
                 >
-                  <MapPin className="w-6 h-6 text-accent" />
+                  <MapPin className="w-6 h-6 text-white" />
                 </motion.div>
                 <div>
-                  <div className="font-semibold text-foreground mb-1">Office</div>
-                  <p className="text-muted-foreground">
+                  <div className="font-semibold text-white mb-1">Office</div>
+                  <p className="text-white/80">
                     123 Construction Boulevard<br />
                     Business District, NY 10001
                   </p>
@@ -111,12 +111,12 @@ export const Contact = () => {
             </div>
 
             <motion.div 
-              className="mt-8 p-6 bg-accent/5 rounded-lg border border-accent/20"
+              className="mt-8 p-6 bg-white/5 rounded-lg border border-white/20"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <h4 className="font-bold text-foreground mb-2">Business Hours</h4>
-              <p className="text-muted-foreground">
+              <h4 className="font-bold text-white mb-2">Business Hours</h4>
+              <p className="text-white/80">
                 Monday - Friday: 8:00 AM - 6:00 PM<br />
                 Saturday: 9:00 AM - 2:00 PM<br />
                 Sunday: Closed
@@ -135,13 +135,13 @@ export const Contact = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: 0.5 }}
               >
-                <label className="block text-sm font-medium text-foreground mb-2">
+                <label className="block text-sm font-medium text-white mb-2">
                   Name *
                 </label>
                 <Input
                   required
                   placeholder="Your name"
-                  className="bg-background border-border focus:border-accent transition-all"
+                  className="bg-white border-white/20 text-foreground focus:border-accent transition-all placeholder:text-muted-foreground"
                 />
               </motion.div>
 
@@ -150,14 +150,14 @@ export const Contact = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: 0.6 }}
               >
-                <label className="block text-sm font-medium text-foreground mb-2">
+                <label className="block text-sm font-medium text-white mb-2">
                   Email *
                 </label>
                 <Input
                   required
                   type="email"
                   placeholder="your.email@company.com"
-                  className="bg-background border-border focus:border-accent transition-all"
+                  className="bg-white border-white/20 text-foreground focus:border-accent transition-all placeholder:text-muted-foreground"
                 />
               </motion.div>
 
@@ -166,12 +166,12 @@ export const Contact = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: 0.7 }}
               >
-                <label className="block text-sm font-medium text-foreground mb-2">
+                <label className="block text-sm font-medium text-white mb-2">
                   Company
                 </label>
                 <Input
                   placeholder="Your company name"
-                  className="bg-background border-border focus:border-accent transition-all"
+                  className="bg-white border-white/20 text-foreground focus:border-accent transition-all placeholder:text-muted-foreground"
                 />
               </motion.div>
 
@@ -180,14 +180,14 @@ export const Contact = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: 0.8 }}
               >
-                <label className="block text-sm font-medium text-foreground mb-2">
+                <label className="block text-sm font-medium text-white mb-2">
                   Message *
                 </label>
                 <Textarea
                   required
                   placeholder="Tell us about your project..."
                   rows={5}
-                  className="bg-background border-border focus:border-accent resize-none transition-all"
+                  className="bg-white border-white/20 text-foreground focus:border-accent resize-none transition-all placeholder:text-muted-foreground"
                 />
               </motion.div>
 
