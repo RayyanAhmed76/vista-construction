@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import logo from "../assets/logo.png";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,9 +28,7 @@ export const Header = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md shadow-lg`}
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -38,7 +37,7 @@ export const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-bold text-foreground"
           >
-            APEX<span className="text-accent">BUILD</span>
+            <img className='w-10 h-5 sm:w-32 sm:h-10 ' src={logo}></img>
           </motion.div>
 
           {/* Desktop Menu */}

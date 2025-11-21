@@ -9,7 +9,7 @@ export const Footer = () => {
             <div className="flex items-center gap-2 mb-4">
               <Building2 className="text-accent" size={28} />
               <span className="text-2xl font-bold">
-                APEX<span className="text-accent">BUILD</span>
+                <span className="text-accent">Bunyad</span>
               </span>
             </div>
             <p className="text-primary-foreground/70 text-sm">
@@ -57,7 +57,7 @@ export const Footer = () => {
             <h4 className="font-bold mb-4">Connect With Us</h4>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/bunyad-construction/"
                 className="p-2 bg-primary-foreground/10 hover:bg-accent rounded-lg transition-colors"
               >
                 <Linkedin size={20} />

@@ -59,7 +59,7 @@ export const Contact = () => {
                     className="text-white/80 hover:text-accent transition-colors"
                     whileHover={{ x: 5 }}
                   >
-                    info@apexbuild.com
+                    info@bunyad.biz
                   </motion.a>
                 </div>
               </motion.div>
@@ -83,7 +83,7 @@ export const Contact = () => {
                     className="text-white/80 hover:text-accent transition-colors"
                     whileHover={{ x: 5 }}
                   >
-                    +1 (234) 567-890
+                    +92 4235140790
                   </motion.a>
                 </div>
               </motion.div>
@@ -103,8 +103,8 @@ export const Contact = () => {
                 <div>
                   <div className="font-semibold text-white mb-1">Office</div>
                   <p className="text-white/80">
-                    123 Construction Boulevard<br />
-                    Business District, NY 10001
+                    74 main industrial area<br />
+                    Lahore,Punjab, 54700 PK
                   </p>
                 </div>
               </motion.div>

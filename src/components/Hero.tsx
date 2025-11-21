@@ -51,8 +51,7 @@ export const Hero = () => {
               transition={{ delay: 0.2, duration: 0.8 }}
               className="flex items-center gap-2 mb-6"
             >
-              <Building2 className="text-accent" size={32} />
-              <span className="text-accent font-semibold">Building Excellence Since 2005</span>
+              
             </motion.div>
 
             <motion.h1
@@ -102,7 +101,7 @@ export const Hero = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                  className="border-primary-foreground text-black hover:bg-white hover:text-black "
                 >
                   View Portfolio
                 </Button>
