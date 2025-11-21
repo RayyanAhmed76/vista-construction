@@ -15,7 +15,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" ref={ref} className="py-24 bg-gradient-hero">
+    <section id="contact" ref={ref} className="py-24 bg-gradient-to-br from-[#003366] to-[#4A90E2]">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
