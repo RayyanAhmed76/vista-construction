@@ -67,27 +67,34 @@ export const WhyTrustUs = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="grid grid-cols-2 gap-6"
           >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                className="bg-[#003366] border-2 border-white/20 rounded-lg p-8 text-center"
-              >
+            {stats.map((stat, index) => {
+              const isOrange = index === 0 || index === 3;
+              return (
                 <motion.div
-                  initial={{ scale: 0 }}
-                  animate={isInView ? { scale: 1 } : {}}
-                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  className="text-4xl md:text-5xl font-bold mb-2 text-white"
+                  key={stat.label}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                  className={`${
+                    isOrange 
+                      ? 'bg-accent' 
+                      : 'bg-[#003366] border-2 border-white/20'
+                  } rounded-lg p-8 text-center`}
                 >
-                  {stat.value}
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={isInView ? { scale: 1 } : {}}
+                    transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                    className="text-4xl md:text-5xl font-bold mb-2 text-white"
+                  >
+                    {stat.value}
+                  </motion.div>
+                  <p className="text-sm font-medium text-white/80">
+                    {stat.label}
+                  </p>
                 </motion.div>
-                <p className="text-sm font-medium text-white/80">
-                  {stat.label}
-                </p>
-              </motion.div>
-            ))}
+              );
+            })}
           </motion.div>
         </div>
       </div>
