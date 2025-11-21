@@ -37,7 +37,7 @@ export const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-bold text-foreground"
           >
-            <img className="w-10 h-5 sm:w-32 sm:h-10 " src={logo}></img>
+            <img className="w-20 h-5 sm:w-32 sm:h-10 " src={logo}></img>
           </motion.div>
 
           {/* Desktop Menu */}
