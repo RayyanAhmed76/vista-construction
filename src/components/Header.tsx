@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logo from "../assets/Logo.png";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,6 +61,12 @@ export const Header = () => {
             >
               Projects
             </button>
+            <Link
+              to="/app/about/"
+              className="text-foreground hover:text-accent transition-colors"
+            >
+              Ai-image generator
+            </Link>
             <button
               onClick={() => scrollToSection("about")}
               className="text-foreground hover:text-accent transition-colors"
