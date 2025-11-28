@@ -62,7 +62,7 @@ export const Header = () => {
               Projects
             </button>
             <Link
-              to="/app/about/"
+              to="/app/about"
               className="text-foreground hover:text-accent transition-colors"
             >
               Ai-image generator
